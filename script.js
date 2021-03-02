@@ -34,7 +34,7 @@ const deleteCheck=(e) => {
         });
     }
     // completed todo
-    else if (item.classList.contains("check-btn")) {
+    if (item.classList.contains("check-btn")) {
         const todo = item.parentElement;
         todo.classList.toggle("completed");
     }
