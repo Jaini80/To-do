@@ -40,6 +40,26 @@ const deleteCheck=(e) => {
     }
 }
 
+// edit
+const edit=(e)=>{
+    let editValue = prompt('edit the selected value!!', e.firstChild.nodeValue);
+    let x = e.firstChild.nodeValue;
+    e.firstChild.nodeValue = editValue;
+    let todos;
+    if (localStorage.getItem('todos') === null) {
+        todos = [];
+    } else {
+        todos = JSON.parse(localStorage.getItem('todos'));
+    }
+    for (let i = 0; i < todos.length; i++) {
+        if(todos[i]===x){
+            const index = x;
+            todos.splice(todos.indexOf(index), 1, editValue);
+        }
+        localStorage.setItem("todos", JSON.stringify(todos));
+    }
+}
+
 // filter
 const filterTodo=(e) => {
     const value = e.target.value;
@@ -107,6 +127,16 @@ const getTodos=() => {
         completedButton.innerHTML = "<i class='fas fa-check'></i>";
         completedButton.classList.add("check-btn");
         todoDiv.appendChild(completedButton);
+
+        // edit button
+        const editButton = document.createElement('button');
+        editButton.innerHTML = '<i class="fas fa-edit"></i>';
+        editButton.classList.add("edit-btn");
+        editButton.onclick = () => {
+            edit(newTodo);
+            // editing(todo);
+        };
+        todoDiv.appendChild(editButton);
 
         // delete button
         const trashButton = document.createElement("button");
