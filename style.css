@@ -114,7 +114,6 @@ form button:hover{
 }
 .edit-btn{
     color: blue;
-    display: none;
 }
 .edit-btn:hover{
     background: blue;

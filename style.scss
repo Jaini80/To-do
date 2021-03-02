@@ -23,7 +23,7 @@ body {
 	margin-bottom: 30px;
 	text-align: center;
 	h1 {
-		color: $white_color;
+		color: $maroon_color;
 		padding: 20px;
 		margin: 0 auto;
 		width: 600px;
@@ -52,6 +52,7 @@ body {
 		}
 	}
 }
+
 form {
 	min-height: 20vh;
 	display: flex;
@@ -83,7 +84,41 @@ form {
 			color: $white_color;
 		}
 	}
+	select {
+		outline: none;
+		border: none;
+		color: $maroon_color;
+		width: 10rem;
+		cursor: pointer;
+		padding: 0.5rem;
+		font-size: 17.6px;
+	}
+	.select {
+		margin: 1rem;
+		position: relative;
+		overflow: hidden;
+		&::after {
+			content: "\25BC";
+			position: absolute;
+			background: $maroon_color;
+			color: $white_color;
+			top: 0;
+			right: 0;
+			left: 125px;
+			border-radius: 35px;
+			padding: 0.6rem;
+			pointer-events: none;
+			transition: all 0.3s ease;
+		}
+		&:hover {
+			&::after {
+				background: $white_color;
+				color: $maroon_color;
+			}
+		}
+	}
 }
+
 .todo-container {
 	display: flex;
 	justify-content: center;
@@ -115,7 +150,6 @@ form {
 	cursor: pointer;
 	color: $green_color;
 	border: none;
-	display: none;
 	&:hover {
 		background: $green_color;
 		color: $white_color;
@@ -159,37 +193,4 @@ form {
 .fall {
 	transform: translate(8rem) rotateZ(20deg);
 	opacity: 0;
-}
-select {
-	outline: none;
-	border: none;
-	color: $maroon_color;
-	width: 10rem;
-	cursor: pointer;
-	padding: 0.5rem;
-	font-size: 17.6px;
-}
-.select {
-	margin: 1rem;
-	position: relative;
-	overflow: hidden;
-	&::after {
-		content: "\25BC";
-		position: absolute;
-		background: $maroon_color;
-		color: $white_color;
-		top: 0;
-		right: 0;
-		left: 125px;
-		border-radius: 35px;
-		padding: 0.6rem;
-		pointer-events: none;
-		transition: all 0.3s ease;
-	}
-	&:hover {
-		&::after {
-			background: $white_color;
-			color: $maroon_color;
-		}
-	}
 }
