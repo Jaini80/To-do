@@ -1,0 +1,176 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: helvetica;
+}
+body{
+    background: url(1.jpeg) no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+}
+.heading{
+    margin-bottom: 30px;
+    text-align: center;
+}
+.heading h1{
+    color: white;
+    padding: 20px;
+    margin: 0 auto;
+    width: 600px;
+    height: auto;
+    display: inline-block;
+    position: relative;
+    font-size: 2.5rem;
+}
+.heading >h1::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 0;
+    width: 10%;
+    height: 2px;
+    background-color: #b71540;
+    transition: .5s;
+}
+.heading >h1:hover::before{
+    width: 25%;
+}
+form{
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    opacity: 0.7;
+}
+form input,form button{
+    padding: 0.5rem;
+    font-size: 1.1rem;
+    border: none;
+    background: white;
+    border-radius: 35px;
+}
+form button{
+    color: #b71540;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 16px;
+    border-radius: 35px;
+}
+form button:hover{
+    background: #b71540;
+    color: white;
+}
+.todo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    opacity: 0.7;
+}
+
+.todo-list{
+    min-width: 30%;
+    list-style: none;
+}
+.todo{
+    margin: 0.5rem;
+    background: white;
+    color: black;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+.todo li{
+    flex: 1;
+}
+.check-btn,.trash-btn,.edit-btn{
+    padding: 1rem;
+    border: none;
+    background: white;
+    cursor: pointer;
+}
+.fa-trash,.fa-check{
+    pointer-events: none;
+}
+.check-btn{
+    color: green;
+    border: none;
+}
+.check-btn:hover{
+    background: green;
+    color: white;
+    opacity: 0.8;   
+}
+.edit-btn{
+    color: blue;
+    display: none;
+}
+.edit-btn:hover{
+    background: blue;
+    color: white;
+    opacity: 0.8;   
+}
+.trash-btn{
+    color: red;
+}
+.trash-btn:hover{
+    background: red;
+    color: white;
+    opacity: 0.8;   
+}
+.todo-item{
+    padding: 0rem 0.5rem;
+}
+.completed{
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+.fall{
+    transform: translate(8rem) rotateZ(20deg);
+    opacity: 0;
+}
+
+select{
+    outline: none;
+    border: none;
+}
+.select{
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+select{
+    color: #b71540;
+    width: 10rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    font-size: 17.6px;
+}
+.select::after{
+    content: "\25BC";
+    position: absolute;
+    background: #b71540;
+    color: white;
+    top: 0;
+    right: 0;
+    left: 125px;
+    border-radius: 35px;
+    padding: 0.6rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.select:hover::after{
+    background: white;
+    color: #b71540;
+}
