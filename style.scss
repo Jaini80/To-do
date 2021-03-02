@@ -1,3 +1,13 @@
+@mixin btns {
+	padding: 1rem;
+	border: none;
+	background: $white_color;
+	cursor: pointer;
+}
+@mixin flex {
+	display: flex;
+}
+
 $white_color: white;
 $maroon_color: #b71540;
 $black_color: black;
@@ -55,7 +65,7 @@ body {
 
 form {
 	min-height: 20vh;
-	display: flex;
+	@include flex();
 	justify-content: center;
 	align-items: center;
 	background: $black_color;
@@ -120,77 +130,71 @@ form {
 }
 
 .todo-container {
-	display: flex;
+	@include flex();
 	justify-content: center;
 	align-items: center;
 	background: $black_color;
 	opacity: 0.7;
-}
-.todo-list {
-	min-width: 30%;
-	list-style: none;
-}
-.todo {
-	margin: 0.5rem;
-	background: $white_color;
-	color: $black_color;
-	font-size: 1.1rem;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	transition: all 0.5s ease;
-	li {
-		flex: 1;
+	.todo-list {
+		min-width: 30%;
+		list-style: none;
+	}
+	.todo {
+		margin: 0.5rem;
+		background: $white_color;
+		color: $black_color;
+		font-size: 1.1rem;
+		@include flex();
+		justify-content: space-between;
+		align-items: center;
+		transition: all 0.5s ease;
+		li {
+			flex: 1;
+		}		
+	}	
+	.todo-item {
+		padding: 0rem 0.5rem;
+	}
+	.check-btn {
+		@include btns();
+		color: $green_color;
+		border: none;
+		&:hover {
+			background: $green_color;
+			color: $white_color;
+			opacity: 0.8;
+		}
+	}
+	.trash-btn {
+		@include btns();
+		color: $red_color;
+		&:hover {
+			background: $red_color;
+			color: $white_color;
+			opacity: 0.8;
+		}
+	}
+	.edit-btn {
+		@include btns();
+		color: $blue_color;
+		&:hover {
+			background: $blue_color;
+			color: $white_color;
+			opacity: 0.8;
+		}
+	}
+	.fa-trash,.fa-check {
+		pointer-events: none;
+	}
+	
+	.completed {
+		text-decoration: line-through;
+		opacity: 0.5;
+	}
+	.fall {
+		transform: translate(8rem) rotateZ(20deg);
+		opacity: 0;
 	}
 }
-.check-btn {
-	padding: 1rem;
-	border: none;
-	background: $white_color;
-	cursor: pointer;
-	color: $green_color;
-	border: none;
-	&:hover {
-		background: $green_color;
-		color: $white_color;
-		opacity: 0.8;
-	}
-}
-.trash-btn {
-	padding: 1rem;
-	border: none;
-	background: $white_color;
-	cursor: pointer;
-	color: $red_color;
-	&:hover {
-		background: $red_color;
-		color: $white_color;
-		opacity: 0.8;
-	}
-}
-.edit-btn {
-	padding: 1rem;
-	border: none;
-	background: $white_color;
-	cursor: pointer;
-	color: $blue_color;
-	&:hover {
-		background: $blue_color;
-		color: $white_color;
-		opacity: 0.8;
-	}
-}
-.fa-trash,.fa-check {
-	pointer-events: none;
-}
-.todo-item {
-	padding: 0rem 0.5rem;
-}
-.completed {
-	text-decoration: line-through;
-	opacity: 0.5;
-}
-.fall {
-	transform: translate(8rem) rotateZ(20deg);
-	opacity: 0;
-}
+
+
