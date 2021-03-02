@@ -4,8 +4,9 @@
 	background: $white_color;
 	cursor: pointer;
 }
-@mixin flex {
+@mixin flex($opacity) {
 	display: flex;
+	opacity: $opacity;
 }
 
 $white_color: white;
@@ -65,11 +66,10 @@ body {
 
 form {
 	min-height: 20vh;
-	@include flex();
+	@include flex(0.7);
 	justify-content: center;
 	align-items: center;
 	background: $black_color;
-	opacity: 0.7;
 	input {
 		padding: 0.5rem;
 		font-size: 1.1rem;
@@ -130,11 +130,10 @@ form {
 }
 
 .todo-container {
-	@include flex();
+	@include flex(0.7);
 	justify-content: center;
 	align-items: center;
 	background: $black_color;
-	opacity: 0.7;
 	.todo-list {
 		min-width: 30%;
 		list-style: none;
