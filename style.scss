@@ -129,31 +129,30 @@ form {
 	}
 }
 
-.todo__container {
+.todo {
 	@include flex(0.7);
 	justify-content: center;
 	align-items: center;
 	background: $black_color;
-	.todo__list {
+	&__list {
 		min-width: 30%;
 		list-style: none;
+		&__container {
+			margin: 0.5rem;
+			background: $white_color;
+			color: $black_color;
+			font-size: 1.1rem;
+			@include flex(1);
+			justify-content: space-between;
+			align-items: center;
+			transition: all 0.5s ease;
+			&__item {
+				padding: 0rem 0.5rem;
+				flex: 1;
+			}
+		}
 	}
-	.todo {
-		margin: 0.5rem;
-		background: $white_color;
-		color: $black_color;
-		font-size: 1.1rem;
-		@include flex();
-		justify-content: space-between;
-		align-items: center;
-		transition: all 0.5s ease;
-		li {
-			flex: 1;
-		}		
-	}	
-	.todo-item {
-		padding: 0rem 0.5rem;
-	}
+		
 	.check-btn {
 		@include btns();
 		color: $green_color;

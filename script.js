@@ -115,12 +115,12 @@ const getTodos=() => {
     todos.forEach((todo) => {
         // Create div
         const todoDiv = document.createElement("div");
-        todoDiv.classList.add("todo");
+        todoDiv.classList.add("todo__list__container");
 
         // Create li
         const newTodo = document.createElement("li");
         newTodo.innerHTML = todo;
-        newTodo.classList.add("todo-item");
+        newTodo.classList.add("todo__list__container__item");
         todoDiv.appendChild(newTodo);
 
         // Create Completed button
@@ -135,7 +135,6 @@ const getTodos=() => {
         editButton.classList.add("edit-btn");
         editButton.onclick = () => {
             edit(newTodo);
-            // editing(todo);
         };
         todoDiv.appendChild(editButton);
 
