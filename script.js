@@ -24,7 +24,7 @@ const addTodo=(e) => {
 const deleteCheck=(e) => {
     let item = e.target;
     // delete todo
-    if (item.classList.contains("trash-btn")) {
+    if (item.classList.contains("todo__list__container-trashBtn")) {
         const todo = item.parentElement;
         // alert("are you sure");
         // animation
@@ -35,7 +35,7 @@ const deleteCheck=(e) => {
         });
     }
     // completed todo
-    if (item.classList.contains("check-btn")) {
+    if (item.classList.contains("todo__list__container-checkBtn")) {
         const todo = item.parentElement;
         todo.classList.toggle("completed");
     }
@@ -120,19 +120,19 @@ const getTodos=() => {
         // Create li
         const newTodo = document.createElement("li");
         newTodo.innerHTML = todo;
-        newTodo.classList.add("todo__list__container__item");
+        newTodo.classList.add("todo__list__container-item");
         todoDiv.appendChild(newTodo);
 
         // Create Completed button
         const completedButton = document.createElement("button");
         completedButton.innerHTML = "<i class='fas fa-check'></i>";
-        completedButton.classList.add("check-btn");
+        completedButton.classList.add("todo__list__container-checkBtn");
         todoDiv.appendChild(completedButton);
 
         // edit button
         const editButton = document.createElement('button');
         editButton.innerHTML = '<i class="fas fa-edit"></i>';
-        editButton.classList.add("edit-btn");
+        editButton.classList.add("todo__list__container-editBtn");
         editButton.onclick = () => {
             edit(newTodo);
         };
@@ -141,7 +141,7 @@ const getTodos=() => {
         // delete button
         const trashButton = document.createElement("button");
         trashButton.innerHTML = "<i class='fas fa-trash'></i>";
-        trashButton.classList.add("trash-btn");
+        trashButton.classList.add("todo__list__container-trashBtn");
         todoDiv.appendChild(trashButton);
 
         // Append all

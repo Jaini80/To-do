@@ -1,3 +1,106 @@
+.todo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 0.7;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: black;
+}
+
+.todo__list {
+  min-width: 30%;
+  list-style: none;
+}
+
+.todo__list__container {
+  margin: 0.5rem;
+  background: white;
+  color: black;
+  font-size: 1.1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 1;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.todo__list__container-item {
+  padding: 0rem 0.5rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.todo__list__container-checkBtn {
+  padding: 1rem;
+  border: none;
+  background: white;
+  cursor: pointer;
+  color: green;
+  border: none;
+}
+
+.todo__list__container-checkBtn:hover {
+  background: green;
+  color: white;
+  opacity: 0.8;
+}
+
+.todo__list__container-editBtn {
+  padding: 1rem;
+  border: none;
+  background: white;
+  cursor: pointer;
+  color: blue;
+}
+
+.todo__list__container-editBtn:hover {
+  background: blue;
+  color: white;
+  opacity: 0.8;
+}
+
+.todo__list__container-trashBtn {
+  padding: 1rem;
+  border: none;
+  background: white;
+  cursor: pointer;
+  color: red;
+}
+
+.todo__list__container-trashBtn:hover {
+  background: red;
+  color: white;
+  opacity: 0.8;
+}
+
+.todo__list .fa-trash, .todo__list .fa-check {
+  pointer-events: none;
+}
+
+.todo__list .completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.todo__list .fall {
+  -webkit-transform: translate(8rem) rotateZ(20deg);
+          transform: translate(8rem) rotateZ(20deg);
+  opacity: 0;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -126,108 +229,5 @@ form .select::after {
 form .select:hover::after {
   background: white;
   color: #b71540;
-}
-
-.todo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  opacity: 0.7;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: black;
-}
-
-.todo__list {
-  min-width: 30%;
-  list-style: none;
-}
-
-.todo__list__container {
-  margin: 0.5rem;
-  background: white;
-  color: black;
-  font-size: 1.1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  opacity: 1;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-.todo__list__container__item {
-  padding: 0rem 0.5rem;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
-.todo .check-btn {
-  padding: 1rem;
-  border: none;
-  background: white;
-  cursor: pointer;
-  color: green;
-  border: none;
-}
-
-.todo .check-btn:hover {
-  background: green;
-  color: white;
-  opacity: 0.8;
-}
-
-.todo .trash-btn {
-  padding: 1rem;
-  border: none;
-  background: white;
-  cursor: pointer;
-  color: red;
-}
-
-.todo .trash-btn:hover {
-  background: red;
-  color: white;
-  opacity: 0.8;
-}
-
-.todo .edit-btn {
-  padding: 1rem;
-  border: none;
-  background: white;
-  cursor: pointer;
-  color: blue;
-}
-
-.todo .edit-btn:hover {
-  background: blue;
-  color: white;
-  opacity: 0.8;
-}
-
-.todo .fa-trash, .todo .fa-check {
-  pointer-events: none;
-}
-
-.todo .completed {
-  text-decoration: line-through;
-  opacity: 0.5;
-}
-
-.todo .fall {
-  -webkit-transform: translate(8rem) rotateZ(20deg);
-          transform: translate(8rem) rotateZ(20deg);
-  opacity: 0;
 }
 /*# sourceMappingURL=style.css.map */
