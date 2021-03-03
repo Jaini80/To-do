@@ -17,7 +17,7 @@ body{
     text-align: center;
 }
 .heading h1{
-    color: white;
+    color: #b71540;
     padding: 20px;
     margin: 0 auto;
     width: 600px;
@@ -68,7 +68,7 @@ form button:hover{
     background: #b71540;
     color: white;
 }
-.todo-container{
+.todo__container{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,7 +76,7 @@ form button:hover{
     opacity: 0.7;
 }
 
-.todo-list{
+.todo__list{
     min-width: 30%;
     list-style: none;
 }

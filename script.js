@@ -1,35 +1,35 @@
 // Selectors
-const todoInput = document.querySelector(".todo-input");
-const todoButton = document.querySelector(".todo-button");
-const todoList = document.querySelector(".todo-list");
-const filter = document.querySelector(".filter-todo");
+const elTodoInput = document.querySelector(".todo__input");
+const elTodoButton = document.querySelector(".todo__button");
+const elTodoList = document.querySelector(".todo__list");
+const elFilter = document.querySelector(".select-filter__todo");
 
 // Functions
 const addTodo=(e) => {
     // reload page
     location.reload();
     // Creating all components
-    if (todoInput.value == 0)
+    if (elTodoInput.value == 0)
     {
         alert("enter value");
     }
     else{    
     // Add todo to local storage
-    saveLocalTodos(todoInput.value);
-    todoInput.value="";
+    saveLocalTodos(elTodoInput.value);
+    elTodoInput.value="";
     }
 }
 
 // delete & check
 const deleteCheck=(e) => {
-    const item = e.target;
+    let item = e.target;
     // delete todo
     if (item.classList.contains("trash-btn")) {
         const todo = item.parentElement;
         // animation
         todo.classList.add("fall");
         removeLocalTodos(todo);
-        todo.addEventListener('transitionend', function(){
+        todo.addEventListener('transitionend', ()=>{
             todo.remove();
         });
     }
@@ -63,7 +63,7 @@ const edit=(e)=>{
 // filter
 const filterTodo=(e) => {
     const value = e.target.value;
-    const todos = todoList.childNodes;
+    const todos = elTodoList.childNodes;
     todos.forEach((todo) => {
         switch (value) {
             case "all":
@@ -145,7 +145,7 @@ const getTodos=() => {
         todoDiv.appendChild(trashButton);
 
         // Append all
-        todoList.appendChild(todoDiv);
+        elTodoList.appendChild(todoDiv);
     });
 }
 
@@ -164,6 +164,6 @@ const removeLocalTodos=(e) => {
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', getTodos);
-todoButton.addEventListener("click", addTodo);
-todoList.addEventListener("click", deleteCheck);
-filter.addEventListener("change", filterTodo);
+elTodoButton.addEventListener("click", addTodo);
+elTodoList.addEventListener("click", deleteCheck);
+elFilter.addEventListener("change", filterTodo);

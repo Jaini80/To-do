@@ -129,12 +129,12 @@ form {
 	}
 }
 
-.todo-container {
+.todo__container {
 	@include flex(0.7);
 	justify-content: center;
 	align-items: center;
 	background: $black_color;
-	.todo-list {
+	.todo__list {
 		min-width: 30%;
 		list-style: none;
 	}
@@ -195,5 +195,3 @@ form {
 		opacity: 0;
 	}
 }
-
-
