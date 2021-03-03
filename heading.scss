@@ -11,22 +11,22 @@
 		display: inline-block;
 		position: relative;
 		font-size: 2.5rem;
-	}
-	&::before {
-		content: '';
-		position: absolute;
-		left: 0;
-		right: 0;
-		margin: 0 auto;
-		bottom: 0;
-		width: 10%;
-		height: 2px;
-		background-color: $maroon_color;
-		transition: .5s;
-	}
-	&:hover {
-		&::before {
-			width: 25%;
-		}
-	}
+    }
+        &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        bottom: 0;
+        width: 10%;
+        height: 2px;
+        background-color: $maroon_color;
+        transition: .5s;        
+        &:hover {
+            &::before {
+                width: 25%;
+            }
+        }
+    }
 }
