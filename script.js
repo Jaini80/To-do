@@ -26,6 +26,7 @@ const deleteCheck=(e) => {
     // delete todo
     if (item.classList.contains("trash-btn")) {
         const todo = item.parentElement;
+        // alert("are you sure");
         // animation
         todo.classList.add("fall");
         removeLocalTodos(todo);
