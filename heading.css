@@ -1,0 +1,33 @@
+.heading {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.heading-title {
+  padding: 20px;
+  margin: 0 auto;
+  width: 600px;
+  height: auto;
+  display: inline-block;
+  position: relative;
+  font-size: 2.5rem;
+}
+
+.heading::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 0;
+  width: 10%;
+  height: 2px;
+  background-color: #b71540;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.heading:hover::before {
+  width: 25%;
+}
+/*# sourceMappingURL=heading.css.map */

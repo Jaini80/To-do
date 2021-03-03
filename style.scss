@@ -1,7 +1,6 @@
 @import "./variables.scss";
 @import "./todo.scss";
-
-
+@import "./heading.scss";
 
 * {
 	padding: 0;
@@ -16,39 +15,6 @@ body {
 	background-position: center;
 	background-attachment: fixed;
 	height: 100%;
-}
-.heading {
-	margin-bottom: 30px;
-	text-align: center;
-	h1 {
-		color: $maroon_color;
-		padding: 20px;
-		margin: 0 auto;
-		width: 600px;
-		height: auto;
-		display: inline-block;
-		position: relative;
-		font-size: 2.5rem;
-	}
-	>h1 {
-		&::before {
-			content: '';
-			position: absolute;
-			left: 0;
-			right: 0;
-			margin: 0 auto;
-			bottom: 0;
-			width: 10%;
-			height: 2px;
-			background-color: $maroon_color;
-			transition: .5s;
-		}
-		&:hover {
-			&::before {
-				width: 25%;
-			}
-		}
-	}
 }
 
 form {
