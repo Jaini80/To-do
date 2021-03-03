@@ -1,8 +1,8 @@
 // Selectors
-const elTodoInput = document.querySelector(".todo__input");
-const elTodoButton = document.querySelector(".todo__button");
+const elTodoInput = document.querySelector(".form__input");
+const elTodoButton = document.querySelector(".form__button");
 const elTodoList = document.querySelector(".todo__list");
-const elFilter = document.querySelector(".select-filter__todo");
+const elFilter = document.querySelector(".form__select-opt");
 
 // Functions
 const addTodo=(e) => {

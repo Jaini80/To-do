@@ -17,20 +17,20 @@ body {
 	height: 100%;
 }
 
-form {
+.form {
 	min-height: 20vh;
 	@include flex(0.7);
 	justify-content: center;
 	align-items: center;
 	background: $black_color;
-	input {
+	&__input {
 		padding: 0.5rem;
 		font-size: 1.1rem;
 		border: none;
 		background: $white_color;
 		border-radius: 35px;
 	}
-	button {
+	&__button {
 		padding: 0.5rem;
 		font-size: 1.1rem;
 		border: none;
@@ -47,16 +47,7 @@ form {
 			color: $white_color;
 		}
 	}
-	select {
-		outline: none;
-		border: none;
-		color: $maroon_color;
-		width: 10rem;
-		cursor: pointer;
-		padding: 0.5rem;
-		font-size: 17.6px;
-	}
-	.select {
+	&__select {
 		margin: 1rem;
 		position: relative;
 		overflow: hidden;
@@ -78,6 +69,15 @@ form {
 				background: $white_color;
 				color: $maroon_color;
 			}
+		}
+		&-opt {
+			outline: none;
+			border: none;
+			color: $maroon_color;
+			width: 10rem;
+			cursor: pointer;
+			padding: 0.5rem;
+			font-size: 17.6px;
 		}
 	}
 }

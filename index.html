@@ -12,13 +12,14 @@
     <header class="heading">
         <h1 style="color: #b71540;" class="heading-title"><b style="color: white;background: linear-gradient(139deg, #ED4C67,#b71540);">TODO</b>List</h1>
     </header>
-	<form class="todo-input-container" onsubmit="return false">
-        <input type="text" class="todo__input" maxlength="40" placeholder="Enter your tasks" />
-        <button class="todo__button" type="submit">
+
+	<form class="form" onsubmit="return false">
+        <input type="text" class="form__input" maxlength="40" placeholder="Enter your tasks" />
+        <button class="form__button" type="submit">
             Add
         </button>
-        <div class="select">
-            <select name="todos" class="select-filter__todo" style="border-radius: 35px;">
+        <div class="form__select">
+            <select name="todos" class="form__select-opt" style="border-radius: 35px;">
                 <option value="all">All</option>
                 <option value="completed">Completed</option>
                 <option value="uncompleted">Uncompleted</option>

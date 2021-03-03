@@ -107,7 +107,6 @@
 }
 
 .heading-title {
-  color: #b71540;
   padding: 20px;
   margin: 0 auto;
   width: 600px;
@@ -152,7 +151,7 @@ body {
   height: 100%;
 }
 
-form {
+.form {
   min-height: 20vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -167,7 +166,7 @@ form {
   background: black;
 }
 
-form input {
+.form__input {
   padding: 0.5rem;
   font-size: 1.1rem;
   border: none;
@@ -175,7 +174,7 @@ form input {
   border-radius: 35px;
 }
 
-form button {
+.form__button {
   padding: 0.5rem;
   font-size: 1.1rem;
   border: none;
@@ -190,28 +189,18 @@ form button {
   border-radius: 35px;
 }
 
-form button:hover {
+.form__button:hover {
   background: #b71540;
   color: white;
 }
 
-form select {
-  outline: none;
-  border: none;
-  color: #b71540;
-  width: 10rem;
-  cursor: pointer;
-  padding: 0.5rem;
-  font-size: 17.6px;
-}
-
-form .select {
+.form__select {
   margin: 1rem;
   position: relative;
   overflow: hidden;
 }
 
-form .select::after {
+.form__select::after {
   content: "\25BC";
   position: absolute;
   background: #b71540;
@@ -226,8 +215,18 @@ form .select::after {
   transition: all 0.3s ease;
 }
 
-form .select:hover::after {
+.form__select:hover::after {
   background: white;
   color: #b71540;
+}
+
+.form__select-opt {
+  outline: none;
+  border: none;
+  color: #b71540;
+  width: 10rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: 17.6px;
 }
 /*# sourceMappingURL=style.css.map */
