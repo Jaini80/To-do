@@ -6,28 +6,13 @@
 .heading-title {
   padding: 20px;
   margin: 0 auto;
-  width: 600px;
+  width: 224px;
   height: auto;
   display: inline-block;
   position: relative;
   font-size: 2.5rem;
-}
-
-.heading::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  bottom: 0;
-  width: 10%;
-  height: 2px;
-  background-color: #b71540;
-  -webkit-transition: .5s;
-  transition: .5s;
-}
-
-.heading::before:hover::before {
-  width: 25%;
+  border-bottom: 2px solid #b71540;
+  color: #b71540;
+  padding-bottom: 5px;
 }
 /*# sourceMappingURL=heading.css.map */

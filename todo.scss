@@ -54,10 +54,10 @@
 					color: $white_color;
 					opacity: 0.8;
 				}
-				.fa-trash{
+				&-fa-trash{
 					pointer-events: none;
 				}
-				.fall {
+				&-fall {
 					transform: translate(8rem) rotateZ(20deg);
 					opacity: 0;
 				}

@@ -1,20 +1,6 @@
-@mixin btns {
-	padding: 1rem;
-	border: none;
-	background: $white_color;
-	cursor: pointer;
-}
-@mixin flex($opacity) {
-	display: flex;
-	opacity: $opacity;
-}
-
-$white_color: white;
-$maroon_color: #b71540;
-$black_color: black;
-$red_color: red;
-$blue_color: blue;
-$green_color: green;
+@import "./variables.scss";
+@import "./todo.scss";
+@import "./heading.scss";
 
 * {
 	padding: 0;

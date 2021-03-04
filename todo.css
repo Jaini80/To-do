@@ -95,11 +95,11 @@
   opacity: 0.8;
 }
 
-.todo__list__container-trashBtn .fa-trash {
+.todo__list__container-trashBtn-fa-trash {
   pointer-events: none;
 }
 
-.todo__list__container-trashBtn .fall {
+.todo__list__container-trashBtn-fall {
   -webkit-transform: translate(8rem) rotateZ(20deg);
           transform: translate(8rem) rotateZ(20deg);
   opacity: 0;

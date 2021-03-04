@@ -1,3 +1,128 @@
+.todo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 0.7;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: black;
+}
+
+.todo__list {
+  min-width: 30%;
+  list-style: none;
+}
+
+.todo__list__container {
+  margin: 0.5rem;
+  background: white;
+  color: black;
+  font-size: 1.1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 1;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.todo__list__container-item {
+  padding: 0rem 0.5rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.todo__list__container-checkBtn {
+  padding: 1rem;
+  border: none;
+  background: white;
+  cursor: pointer;
+  color: green;
+  border: none;
+}
+
+.todo__list__container-checkBtn:hover {
+  background: green;
+  color: white;
+  opacity: 0.8;
+}
+
+.todo__list__container-checkBtn .fa-check {
+  pointer-events: none;
+}
+
+.todo__list__container-checkBtn .completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.todo__list__container-editBtn {
+  padding: 1rem;
+  border: none;
+  background: white;
+  cursor: pointer;
+  color: blue;
+}
+
+.todo__list__container-editBtn:hover {
+  background: blue;
+  color: white;
+  opacity: 0.8;
+}
+
+.todo__list__container-trashBtn {
+  padding: 1rem;
+  border: none;
+  background: white;
+  cursor: pointer;
+  color: red;
+}
+
+.todo__list__container-trashBtn:hover {
+  background: red;
+  color: white;
+  opacity: 0.8;
+}
+
+.todo__list__container-trashBtn-fa-trash {
+  pointer-events: none;
+}
+
+.todo__list__container-trashBtn-fall {
+  -webkit-transform: translate(8rem) rotateZ(20deg);
+          transform: translate(8rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+.heading {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.heading-title {
+  padding: 20px;
+  margin: 0 auto;
+  width: 224px;
+  height: auto;
+  display: inline-block;
+  position: relative;
+  font-size: 2.5rem;
+  border-bottom: 2px solid #b71540;
+  color: #b71540;
+  padding-bottom: 5px;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -205,28 +330,10 @@ body {
 .heading-title {
   padding: 20px;
   margin: 0 auto;
-  width: 600px;
+  width: 224px;
   height: auto;
   display: inline-block;
   position: relative;
   font-size: 2.5rem;
-}
-
-.heading::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  bottom: 0;
-  width: 10%;
-  height: 2px;
-  background-color: #b71540;
-  -webkit-transition: .5s;
-  transition: .5s;
-}
-
-.heading::before:hover::before {
-  width: 25%;
 }
 /*# sourceMappingURL=style.css.map */

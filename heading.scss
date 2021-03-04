@@ -2,31 +2,16 @@
 
 .heading {
 	margin-bottom: 30px;
-	text-align: center;
+	text-align: center;    
 	&-title {
 		padding: 20px;
 		margin: 0 auto;
-		width: 600px;
+		width: 224px;
 		height: auto;
 		display: inline-block;
 		position: relative;
-		font-size: 2.5rem;
-    }
-        &::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        bottom: 0;
-        width: 10%;
-        height: 2px;
-        background-color: $maroon_color;
-        transition: .5s;        
-        &:hover {
-            &::before {
-                width: 25%;
-            }
-        }
+		font-size: 2.5rem;border-bottom: 2px solid #b71540;
+        color: #b71540;
+        padding-bottom: 5px;
     }
 }
