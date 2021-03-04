@@ -6,8 +6,6 @@ const elFilter = document.querySelector(".form__select-opt");
 
 // Functions
 const addTodo=(e) => {
-    // reload page
-    location.reload();
     // Creating all components
     if (elTodoInput.value == 0)
     {
@@ -16,7 +14,11 @@ const addTodo=(e) => {
     else{    
     // Add todo to local storage
     saveLocalTodos(elTodoInput.value);
+    // clear input
     elTodoInput.value="";
+    
+    elTodoList.innerHTML="";
+    getTodos();
     }
 }
 
