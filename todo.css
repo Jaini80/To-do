@@ -58,11 +58,11 @@
   opacity: 0.8;
 }
 
-.todo__list__container-checkBtn .fa-check {
+.todo__list__container-checkBtn-fa-check {
   pointer-events: none;
 }
 
-.todo__list__container-checkBtn .completed {
+.todo__list__container-checkBtn-completed {
   text-decoration: line-through;
   opacity: 0.5;
 }

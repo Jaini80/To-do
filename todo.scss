@@ -29,10 +29,10 @@
 					color: $white_color;
 					opacity: 0.8;
 				}
-				.fa-check {
+				&-fa-check {
 					pointer-events: none;
 				}
-				.completed {
+				&-completed {
 					text-decoration: line-through;
 					opacity: 0.5;
 				}
