@@ -1,4 +1,5 @@
 @import "./variables.scss";
+
 .todo {
 	@include flex(0.7);
 	justify-content: center;
@@ -21,7 +22,7 @@
 				flex: 1;
 			}
 			&-checkBtn {
-				@include btns;
+				@include btns();
 				color: $green_color;
 				border: none;
 				&:hover {
@@ -29,16 +30,9 @@
 					color: $white_color;
 					opacity: 0.8;
 				}
-				&-fa-check {
-					pointer-events: none;
-				}
-				&-completed {
-					text-decoration: line-through;
-					opacity: 0.5;
-				}
 			}
 			&-editBtn {
-				@include btns;
+				@include btns();
 				color: $blue_color;
 				&:hover {
 					background: $blue_color;
@@ -47,21 +41,26 @@
 				}
 			}
 			&-trashBtn {
-				@include btns;
+				@include btns();
 				color: $red_color;
 				&:hover {
 					background: $red_color;
 					color: $white_color;
 					opacity: 0.8;
 				}
-				&-fa-trash{
-					pointer-events: none;
-				}
-				&-fall {
-					transform: translate(8rem) rotateZ(20deg);
-					opacity: 0;
-				}
 			}	
-		}		
+		}
+		.fa-trash,.fa-check {
+			pointer-events: none;
+		}
+		
+		.completed {
+			text-decoration: line-through;
+			opacity: 0.5;
+		}
+		.fall {
+			transform: translate(8rem) rotateZ(20deg);
+			opacity: 0;
+		}
 	}		
 }

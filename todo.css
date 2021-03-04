@@ -58,15 +58,6 @@
   opacity: 0.8;
 }
 
-.todo__list__container-checkBtn-fa-check {
-  pointer-events: none;
-}
-
-.todo__list__container-checkBtn-completed {
-  text-decoration: line-through;
-  opacity: 0.5;
-}
-
 .todo__list__container-editBtn {
   padding: 1rem;
   border: none;
@@ -95,11 +86,16 @@
   opacity: 0.8;
 }
 
-.todo__list__container-trashBtn-fa-trash {
+.todo__list .fa-trash, .todo__list .fa-check {
   pointer-events: none;
 }
 
-.todo__list__container-trashBtn-fall {
+.todo__list .completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.todo__list .fall {
   -webkit-transform: translate(8rem) rotateZ(20deg);
           transform: translate(8rem) rotateZ(20deg);
   opacity: 0;
