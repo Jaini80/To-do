@@ -21,7 +21,7 @@
 				flex: 1;
 			}
 			&-checkBtn {
-				@include btns();
+				@include btns;
 				color: $green_color;
 				border: none;
 				&:hover {
@@ -38,7 +38,7 @@
 				}
 			}
 			&-editBtn {
-				@include btns();
+				@include btns;
 				color: $blue_color;
 				&:hover {
 					background: $blue_color;
