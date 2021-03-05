@@ -1,24 +1,36 @@
 // Selectors
-const elTodoInput = document.querySelector(".form__input");
-const elTodoButton = document.querySelector(".form__button");
-const elTodoList = document.querySelector(".todo__list");
-const elFilter = document.querySelector(".form__select-opt");
+const elTodoInput = $(".form__input");
+const elTodoButton = $(".form__button");
+const elTodoList = $(".todo__list");
+const elFilter = $(".form__select-opt");
+
+elTodoButton.click(()=>{
+    addTodo();
+});
+elTodoList.click((e)=>{
+    deleteCheck(e);
+});
+elFilter.click((e)=>{
+    filterTodo(e);
+});
 
 // Functions
-const addTodo=(e) => {
+const addTodo=() => {
     // Creating all components
-    if (elTodoInput.value == 0)
+    if (elTodoInput.val() == 0)
     {
         alert("enter value");
     }
+    else{
     // Add todo to local storage
-    saveLocalTodos(elTodoInput.value);
+    saveLocalTodos(elTodoInput.val());
          
     // clear input
-    elTodoInput.value="";
-    
-    elTodoList.innerHTML="";
+    elTodoInput.val('');
+    elTodoList.html('');
+
     getTodos();
+    }
 }
 
 // delete & check
@@ -28,11 +40,8 @@ const deleteCheck=(e) => {
     if (item.classList.contains("todo__list__container-trashBtn")) {
         const todo = item.parentElement;
         // animation
-        todo.classList.add("fall");
+        todo.remove();
         removeLocalTodos(todo);
-        todo.addEventListener('transitionend', ()=>{
-            todo.remove();
-        });
     }
     // completed todo
     if (item.classList.contains("todo__list__container-checkBtn")) {
@@ -43,9 +52,8 @@ const deleteCheck=(e) => {
 
 // edit
 const edit=(e)=>{
-    let editValue = prompt('edit the selected value!!', e.firstChild.nodeValue);
-    let x = e.firstChild.nodeValue;
-    e.firstChild.nodeValue = editValue;
+    let editValue = prompt('edit the selected value!!', $(e.first("li")).text());
+    let x = $(e.first("li")).text();
     let todos;
     if (localStorage.getItem('todos') === null) {
         todos = [];
@@ -58,37 +66,9 @@ const edit=(e)=>{
             todos.splice(todos.indexOf(index), 1, editValue);
         }
         localStorage.setItem("todos", JSON.stringify(todos));
+        elTodoList.empty();
+        getTodos();
     }
-}
-
-// filter
-const filterTodo=(e) => {
-    const value = e.target.value;
-    const todos = elTodoList.childNodes;
-    todos.forEach((todo) => {
-        switch (value) {
-            case "all":
-                todo.style.display = "flex";
-                break;
-            case "completed":
-                if (todo.classList.contains("completed")) {
-                    todo.style.display = "flex";
-                } else {
-                    todo.style.display = "none";
-                }
-
-                break;
-            case "uncompleted":
-                if (!todo.classList.contains("completed")) {
-                    todo.style.display = "flex";
-                } else {
-                    todo.style.display = "none";
-                }
-                break;
-            default:
-                return;
-        }
-    });
 }
 
 // Local storage
@@ -104,6 +84,7 @@ const saveLocalTodos=(todo) => {
     localStorage.setItem('todos', JSON.stringify(todos));
 }
 
+// get data
 const getTodos=() => {
     // CHECK---HEY Do I already have thins in there?
     let todos;
@@ -114,41 +95,42 @@ const getTodos=() => {
     }
     todos.forEach((todo) => {
         // Create div
-        const todoDiv = document.createElement("div");
-        todoDiv.classList.add("todo__list__container");
+        const todoDiv = $("<div class='todo__list__container'></div>");
 
         // Create li
-        const newTodo = document.createElement("li");
-        newTodo.innerHTML = todo;
-        newTodo.classList.add("todo__list__container-item");
-        todoDiv.appendChild(newTodo);
+        const newTodo = $("<li></li>");
+        newTodo.html(todo);
+        newTodo.addClass("todo__list__container-item");
+        todoDiv.append(newTodo);
 
         // Create Completed button
-        const completedButton = document.createElement("button");
-        completedButton.innerHTML = "<i class='fas fa-check'></i>";
-        completedButton.classList.add("todo__list__container-checkBtn");
-        todoDiv.appendChild(completedButton);
+        const completedButton = $("<button></button>");
+        completedButton.html("<i class='fas fa-check'></i>");
+        completedButton.addClass("todo__list__container-checkBtn");
+        todoDiv.append(completedButton);
 
         // edit button
-        const editButton = document.createElement('button');
-        editButton.innerHTML = '<i class="fas fa-edit"></i>';
-        editButton.classList.add("todo__list__container-editBtn");
-        editButton.onclick = () => {
+        const editButton = $("<button></button>");
+        editButton.html('<i class="fas fa-edit"></i>');
+        editButton.addClass("todo__list__container-editBtn");
+        editButton.click(() => {
             edit(newTodo);
-        };
-        todoDiv.appendChild(editButton);
+        });
+        todoDiv.append(editButton);
 
         // delete button
-        const trashButton = document.createElement("button");
-        trashButton.innerHTML = "<i class='fas fa-trash'></i>";
-        trashButton.classList.add("todo__list__container-trashBtn");
-        todoDiv.appendChild(trashButton);
+        const trashButton = $("<button></button>");
+        trashButton.html("<i class='fas fa-trash'></i>");
+        trashButton.addClass("todo__list__container-trashBtn");
+        todoDiv.append(trashButton);
 
         // Append all
-        elTodoList.appendChild(todoDiv);
+        elTodoList.append(todoDiv);
     });
 }
+$( window ).on( "load", getTodos());
 
+// remove from local storage
 const removeLocalTodos=(e) => {
     // CHECK---HEY Do I already have thins in there?
     let todos;
@@ -161,9 +143,3 @@ const removeLocalTodos=(e) => {
     todos.splice(todos.indexOf(todoIndex), 1);
     localStorage.setItem("todos", JSON.stringify(todos));
 }
-
-// Event Listeners
-document.addEventListener('DOMContentLoaded', getTodos);
-elTodoButton.addEventListener("click", addTodo);
-elTodoList.addEventListener("click", deleteCheck);
-elFilter.addEventListener("change", filterTodo);
