@@ -11,30 +11,14 @@ const addTodo=(e) => {
     {
         alert("enter value");
     }
-    else{    
-        let todos;
-        if (localStorage.getItem('todos') === null) {
-            todos = [];
-        } else {
-            todos = JSON.parse(localStorage.getItem('todos'));
-        }
-        for (let i = 0; i < todos.length; i++) {
-            //alert(todos.length);
-            if(todos[i] === elTodoInput.value)
-            {
-                alert("Can not add multiple value!!");
-            }
-            else{
-                // Add todo to local storage
-                saveLocalTodos(elTodoInput.value);
-            }       
-        }
+    // Add todo to local storage
+    saveLocalTodos(elTodoInput.value);
+         
     // clear input
     elTodoInput.value="";
     
     elTodoList.innerHTML="";
     getTodos();
-    }
 }
 
 // delete & check
@@ -43,7 +27,6 @@ const deleteCheck=(e) => {
     // delete todo
     if (item.classList.contains("todo__list__container-trashBtn")) {
         const todo = item.parentElement;
-        // alert("are you sure");
         // animation
         todo.classList.add("fall");
         removeLocalTodos(todo);
